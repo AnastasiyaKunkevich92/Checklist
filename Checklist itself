@@ -1,0 +1,62 @@
+   Smoke test(Log in):
+-enter the email and password of the user existing in the system
+-enter the phone number and password of the user existing in the system
+
+   Critical path test(Log in):
+-existing email, empty 'password' field
+-existing phone number, empty 'password' field
+-empty 'email or phone number' field, existing password
+-mistake in email (without @, without the first/the last symbol, with the different the first/the last symbol, extra symbol), existing password
+-existing email, mistake in password(without the first/the last symbol, with the different the first/the last symbol, extra symbol)
+-mistake in phone number(without the first/the last symbol, with the different the first/the last symbol, extra symbol), existing password
+-phone number in different formats (starts with '+' symbol, with/without country and operator code), existing password
+-SQL injection
+
+   Extendet test(Log in):
+-email using Latin and Cyrillic letters
+-string 'email or phone number' starts/ends with space, has spase in the middle
+-email starts/contains an uppercase letters
+-password starts/ends with space, has spase in the middle
+-max/min length for both fields
+
+   Smoke test(Sign up):
+-fill in the proposed fields,select the date of birth from the drop-down list (at least 5 years old on the day of registration), check radio button in the 'Floor' section
+
+   Critical path test(Sign up):
+-fill in all fields, mark the radio button, select the min/max possible date
+-fill in all fields, mark the radio button, select date of birth, leave empty the field for entering a name(repeat for surname, mobile phone number or email address,
+re-enter your email address, new password)
+-fill in all fields, select date of birth, don't mark any radoibutton in section 'Floor'
+-fill in all fields, section date of birth, mark radoibutton 'Other' in section 'Floor', check all possible options
+-click on the question mark in sections 'Date of Birth' and 'Floor'
+-click links Terms , Data Policy and Cookie Policy at the bottom of the page
+-enter a phone number (repeat with different formats) in the field for entering a mobile phone number or email address
+-enter a email (re-enrer email with using of copy+paste, the same email, different email, email with uppercase letters) 
+in the field for entering a mobile phone number or email address
+
+   Extendet test(Sign up):
+-max/min length for fields
+-using Latin and Cyrillic letters for fields
+-strings start/end with space, have space in the middle
+-strings start/contain an uppercase letters, emoji, numbers, other symbols
+
+   Smoke test(Forgot password):
+-enter the email of the user existing in the system, go through the next steps with possible branching options
+-enter the phone number of the user existing in the system, go through the next steps with possible branching options
+
+   Critical path test(Forgot password):
+-enter the email of the user unexisting in the system
+-enter the phone number of the user unexisting in the system
+-click the button 'Cancellation'
+-leave field empty, click the button 'Search'
+-SQL injection
+-phone number in different formats (starts with '+' symbol, with/without country and operator code)
+
+   Extendet test(Forgot password):
+-max/min field length
+-enter the email and phone number of the user existing in the system at the same time
+-enter the password of the user existing in the system (instead of email or phone number)
+-string starts/ends with space, has space in the middle
+-email starts/contains an uppercase letters
+
+Smoke test for all functions repeat with use of a mobile device.
